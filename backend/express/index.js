@@ -4,7 +4,7 @@ const app = express()
 const router = require('./routes/TasksRoutes')
 const bodyParser = require('body-parser')
 const path = require('path')
-const port = 5000
+const port = process.env.PORT || 5000;
 
 // routes
 const taskRoutes = require('./routes/TasksRoutes')
