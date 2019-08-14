@@ -67,7 +67,9 @@ body {
     height: 100px;
     background-color:  rgb(152, 172, 199);
     border-radius: 50%;
-    margin: 0 auto;
+    display: flex;
+    align-self: center;
+    /* margin: 0 auto; */
 }
 
 #projects {

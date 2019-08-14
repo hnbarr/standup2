@@ -37,10 +37,7 @@ app.use(logRoutes)
 app.use(blockerRoutes)
 
 
-
-
 console.log(path.join(__dirname, "../../build"))
-
 
 
 if (process.env.NODE_ENV === 'production') {
