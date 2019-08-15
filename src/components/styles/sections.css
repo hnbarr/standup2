@@ -31,10 +31,6 @@ body {
     color: #3C649D;
 }
 
-#taskTitle, #blockerTitle {
-    text-align: left !important;
-}
-
 #addNewTask, #addNewBlocker {
     padding: 20px;
     display: grid;
@@ -102,10 +98,10 @@ body {
     height: 40px;
     margin-top: 5px;
     box-shadow:  0 0 3px rgb(133, 149, 171);
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; */
+    align-items: left;
     border-radius: 12px;
     background-color: white;
     padding: 10px;
