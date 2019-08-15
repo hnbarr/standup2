@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
     return {
       updateLog: (log) => dispatch(updateLog(log)),
-      listLogs: (_id) => dispatch(listLogs(_id)),
+      listLogs: (id) => dispatch(listLogs(id)),
       showLog: (log) => dispatch(showLog(log)),
       createLog: (log) => dispatch(createLog(log)),
       deleteLog: (log) => dispatch(deleteLog(log))

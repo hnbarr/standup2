@@ -140,12 +140,14 @@ const Logs = props => {
         setSelected(log)
     }
 
-    const { id } = this.props.match.params
+    const { id } = props.match.params
     useEffect(() => {
         const projectId = id
         props.listLogs(projectId)
     }, [props.listLogs])
 
+
+    console.log('logs ID: ', [props.listLogs] )
     return (
         <div id='log'>
             <Nav id='navLog'/>
@@ -159,7 +161,6 @@ const Logs = props => {
                     <Button id='searchBtn' color='primary' type='submit'>go</Button>
                 </form>
                 <div id='logList'>
-                    {/* <Log title={'hard code title'} description={'hard code description'} tag={'hard code tag'}/> */}
                     {props.logs.map((l, i)=>{
                         return <Log key={i} title={l.title} description={l.description} tag={l.tag} handleSelect={handleSelect}/>
                     })}
