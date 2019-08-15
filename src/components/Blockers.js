@@ -90,9 +90,9 @@ class BlockerModal extends Component {
 const Blocker = props => {
     // console.log(`THIS ONE!: `, props)
     const tag = props.tag
-    const handleEdit = (e) => {
-        console.log(e.target, 'editing')
-    }
+    // const handleEdit = (e) => {
+    //     console.log(e.target, 'editing')
+    // }
 
     const handleCheck = (e) => {
         e.preventDefault()
@@ -106,9 +106,9 @@ const Blocker = props => {
         <div className='newItem' id='newBlocker'>
             <Checkbox onClick={(e)=>handleCheck(e)} tag={tag} inputProps={{'aria-label': 'primary checkbox'}}/>
             <p id='blockerTitle'> {props.value}</p>
-            <div id='blockerButtons'>
+            {/* <div id='blockerButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>
-            </div>
+            </div> */}
         </div>
     )
 }

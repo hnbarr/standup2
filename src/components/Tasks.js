@@ -97,18 +97,18 @@ const Task = props => {
             props.listTasks()
           }, 300)
     }
-    const handleEdit = (e) => {
-        console.log(e.target)
-        this.props.updateTask(e.target.value, e.target.id)
-    }
+    // const handleEdit = (e) => {
+    //     console.log(e.target)
+    //     this.props.updateTask(e.target.value, e.target.id)
+    // }
     
     return (
         <div className='newItem' id='newTask'>
             <Checkbox onClick={(e)=>handleCheck(e)} tag={tag}inputProps={{'aria-label': 'primary checkbox'}}/>
             <p id='taskTitle'>{props.value}</p>
-            <div id='taskButtons'>
+            {/* <div id='taskButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -31,6 +31,10 @@ body {
     color: #3C649D;
 }
 
+#taskTitle, #blockerTitle {
+    text-align: left !important;
+}
+
 #addNewTask, #addNewBlocker {
     padding: 20px;
     display: grid;
