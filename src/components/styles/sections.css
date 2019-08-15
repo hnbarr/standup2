@@ -100,8 +100,8 @@ body {
     box-shadow:  0 0 3px rgb(133, 149, 171);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: left;
+    justify-content: space-between;
+    align-items: center;
     border-radius: 12px;
     background-color: white;
     padding: 10px;
@@ -119,6 +119,10 @@ body {
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+#taskTitle, #blockerTitle {
+    width: 80%;
 }
 
 #blockerList, #statList {
