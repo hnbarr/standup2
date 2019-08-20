@@ -113,7 +113,6 @@ const Log = props => {
         <div className='logItem' onClick={handleSelect}> 
             <div id='deets'>
                 <p id='liTitle'>{props.title}</p>
-                {/* <p id='liDate'>{props.description}</p> */}
                 <p id='liTag'>{props.tag}</p>
             </div>
         </div>
@@ -160,6 +159,8 @@ const Logs = props => {
         console.log(e.target)
         setSelected(log)
     }
+// const projectId = props.match.params.id
+
 
     const { id } = props.match.params
     useEffect(() => {
