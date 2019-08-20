@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import './styles/log.css'
+// import state from '../redux/state'
 import Nav from './Nav'
 import { TextField, Button, Modal, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
@@ -32,7 +33,7 @@ const styles = theme => ({
         logs: [],
         title: '',
         tag: '',
-        description: '',
+        description: ''
     }
 
     handleOpen = () => {
@@ -53,8 +54,20 @@ const styles = theme => ({
     handleSubmit = () => {     
         const {title, tag, description} = this.state
         this.props.createLog({title, tag, description})
-        
         this.handleClose()
+        // let options = {
+        //     method: "POST",
+        //     headers: {"Content-Type": "application/json"},
+        //     body: JSON.stringify({ title, tag, description})
+        // }
+        // fetch("/api/projects/:id/logs", options).then((res)=>{
+        //     return res.json()
+        // }).then((res)=>{
+        //     console.log(res)
+        // }).catch((err)=>{
+        //     console.log(err)
+        // })
+        // this.handleClose()
     }
 
     handleChange = (e) => {
@@ -108,11 +121,19 @@ const Log = props => {
 }
 
 const LogPreview = props => {
-    const handleEdit = () => {
-
+    const handleEdit = (e) => {
+        e.preventDefault()
+        console.log('edit this post: ', props._id)
     }
-    const handleDelete = () => {
 
+    const handleDelete = (e, i ) => {
+       const deleteId =  props.logs[0]._id
+       console.log('delete this post: ', deleteId)
+       e.preventDefault()
+       props.deleteLog(deleteId)
+       setTimeout(() => {
+        props.listLogs()
+      }, 300)
     }
     return (
         <div className='logPreview'>
@@ -147,7 +168,7 @@ const Logs = props => {
     }, [props.listLogs])
 
 
-    console.log('logs ID: ', [props.listLogs] )
+    console.log('project ID for logs: ', props )
     return (
         <div id='log'>
             <Nav id='navLog'/>
@@ -168,7 +189,7 @@ const Logs = props => {
             </div>
 
             <div id='logRightPane'>
-                <LogPreview log={selected} />
+                <LogPreview {...props} log={selected} />
             </div>
         </div>
     )

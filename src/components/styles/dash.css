@@ -67,8 +67,10 @@ body {
     height: 100px;
     background-color:  rgb(152, 172, 199);
     border-radius: 50%;
+    margin-top: 10px;
     display: flex;
-    align-self: center;
+    align-self: flex-start;
+    justify-self: center;
     /* margin: 0 auto; */
 }
 
@@ -154,6 +156,7 @@ body {
     #avatar, #avatar a{
         width: 75px;
         height: 75px;
+        margin: 0 auto;
     }
 
     .navBtns {

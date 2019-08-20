@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
       listLogs: (id) => dispatch(listLogs(id)),
       showLog: (log) => dispatch(showLog(log)),
       createLog: (log) => dispatch(createLog(log)),
-      deleteLog: (log) => dispatch(deleteLog(log))
+      deleteLog: (id) => dispatch(deleteLog(id))
     }
   }
 

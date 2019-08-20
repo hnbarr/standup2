@@ -1,3 +1,6 @@
+import Axios from "axios";
+
+
 export function createLog (log){
     return {
         type: 'CREATE_LOG',
@@ -38,9 +41,26 @@ export function updateLog (log){
     }
 }
 
-export function deleteLog (log){
-    return {
-        type: 'DELETE_LOG',
-        value: log
+// export function deleteLog (log){
+//     return {
+//         type: 'DELETE_LOG',
+//         value: log
+//     }
+// }
+
+
+export const deleteLog = _id => async (dispatch, getState) => {
+    const { logs } = getState()
+    try {
+        await Axios.delete(`/api/projects/:id/logs/${_id}`)
+        dispatch({
+            type: `DELETE_LOG`,
+            payload: {
+                blockers : logs,
+                delete: _id
+            }
+        })
+    } catch (err) {
+       console.error(err.message)
     }
 }
