@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './styles/dash.css'
 import TaskContainer from '../containers/TaskContainer'
 import BlockerContainer from '../containers/BlockerContainer'
@@ -9,12 +9,10 @@ import Nav from './Nav'
 // import { withRouter} from 'react-router-dom'
 
 const Dashboard = () => {
-  // this.props.history.go(0)
-  // const { id } = props.match.params
     return(
         <div className='dashboard'>
             <Nav/>
-            <ProjectContainer />
+            <ProjectContainer/>
             <Stats />
             <TaskContainer />
             <BlockerContainer />
