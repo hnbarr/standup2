@@ -281,6 +281,7 @@ body {
     #newProject {
        width: 95%;
        margin: 0 auto;
+       margin-top: 10px;
     }
 
     #stats {
@@ -343,5 +344,9 @@ body {
 
     #statList {
         height: 175px;
+    }
+
+    #newProject {
+        margin-top: 10px;
     }
   }

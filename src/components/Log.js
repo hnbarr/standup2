@@ -27,7 +27,7 @@ const styles = theme => ({
     },
   });
 
-  class LogModal extends Component { 
+  class LogModal extends Component {
     state = {
         open: false,
         logs: [],
@@ -51,7 +51,7 @@ const styles = theme => ({
         })
     };
 
-    handleSubmit = () => {     
+    handleSubmit = () => { 
         const {title, tag, description} = this.state
         this.props.createLog({title, tag, description})
         this.handleClose()
@@ -84,7 +84,7 @@ const styles = theme => ({
             <div>
                 <button onClick={this.handleOpen} className='addBtn' ><i className="fas fa-plus-circle fa-2x"></i> </button>
                 <Modal aria-labelledby="simple-modal-title" aria-describedby="simple-modal-description" open={this.state.open} onClose={this.handleClose}>
-                    <form id='addNewLog' className={classes.paper} onSubmit={this.handleSubmit}>
+                    <form id='addNewLog' className={classes.paper}>
                         <Typography id='modalName' color='primary'> add a new log</Typography>
                         <TextField onChange={e => this.handleChange(e)} value={this.state.title} name='title' className="formTitle" label="Title" margin="normal" variant="outlined"/>
                         <TextField onChange={e => this.handleChange(e)} value={this.state.tag} name='tag' className="formTag" label="Tag" margin="normal" variant="outlined" placeholder='eg. Redux'/>
@@ -160,7 +160,6 @@ const Logs = props => {
         setSelected(log)
     }
 // const projectId = props.match.params.id
-
 
     const { id } = props.match.params
     useEffect(() => {
