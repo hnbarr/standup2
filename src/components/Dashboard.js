@@ -10,6 +10,7 @@ import Nav from './Nav'
 
 const Dashboard = () => {
   // this.props.history.go(0)
+  // const { id } = props.match.params
     return(
         <div className='dashboard'>
             <Nav/>
@@ -28,3 +29,9 @@ Dashboard.propTypes = {
 
 // export default withRouter(Dashboard)
 export default Dashboard
+
+// const refreshPage = () => {
+//   window.location.reload(false);
+// }
+
+// onClick={refreshPage}
