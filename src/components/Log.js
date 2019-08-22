@@ -156,10 +156,8 @@ const Logs = props => {
     const [selected, setSelected] = useState({});
     const handleSelect = (e, log) => {
         e.preventDefault()
-        console.log(e.target)
         setSelected(log)
     }
-// const projectId = props.match.params.id
 
     const { id } = props.match.params
     useEffect(() => {
@@ -169,6 +167,7 @@ const Logs = props => {
 
 
     console.log('project ID for logs: ', props )
+
     return (
         <div id='log'>
             <Nav id='navLog'/>
@@ -183,7 +182,7 @@ const Logs = props => {
                 </form>
                 <div id='logList'>
                     {props.logs.map((l, i)=>{
-                        return <Log key={i} title={l.title} description={l.description} tag={l.tag} handleSelect={handleSelect}/>
+                            return <Log key={i} title={l.title} description={l.description} tag={l.tag} handleSelect={handleSelect}/>
                     })}
                 </div>
             </div>
