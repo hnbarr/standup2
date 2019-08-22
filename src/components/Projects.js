@@ -147,7 +147,7 @@ const Project = props => {
                 <p> {props.description}</p>
             </div>
             <div id='projButtons'>
-                <Link to={`/projects/${props.id}/logs`} className='edit'>details{/*number of log list items for project*/} </Link>
+                <Link to={`/projects/${props.id}/logs`} className='edit'>details</Link>
                 <button onClick={handleDelete} className='trash'>delete</button>
                 <button onClick={handleSubmit} className='submit'>submit</button>
             </div>

@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
       updateProject: (project) => dispatch(updateProject(project)),
       listProjects: () => dispatch(listProjects()),
-      showProject: (project) => dispatch(showProject(project)),
+      showProject: (_id) => dispatch(showProject(_id)),
       createProject: (project) => dispatch(createProject(project)),
       deleteProject: (project) => dispatch(deleteProject(project))
     }

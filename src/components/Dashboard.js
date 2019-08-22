@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React from 'react'
 import './styles/dash.css'
 import TaskContainer from '../containers/TaskContainer'
 import BlockerContainer from '../containers/BlockerContainer'
@@ -6,7 +6,6 @@ import Stats from './Stats'
 import ProjectContainer from '../containers/ProjectContainer'
 import Nav from './Nav'
 import store from '../redux/store'
-import state from '../redux/state'
 
 // import PropTypes from 'prop-types'
 // import { withRouter} from 'react-router-dom'

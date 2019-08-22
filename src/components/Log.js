@@ -52,22 +52,22 @@ const styles = theme => ({
     };
 
     handleSubmit = () => { 
-        const {title, tag, description} = this.state
-        this.props.createLog({title, tag, description})
-        this.handleClose()
-        // let options = {
-        //     method: "POST",
-        //     headers: {"Content-Type": "application/json"},
-        //     body: JSON.stringify({ title, tag, description})
-        // }
-        // fetch("/api/projects/:id/logs", options).then((res)=>{
-        //     return res.json()
-        // }).then((res)=>{
-        //     console.log(res)
-        // }).catch((err)=>{
-        //     console.log(err)
-        // })
+        const { title, tag, description} = this.state
+        // this.props.createLog({title, tag, description})
         // this.handleClose()
+        let options = {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ title, tag, description})
+        }
+        fetch("/api/projects/:id/logs", options).then((res)=>{
+            return res.json()
+        }).then((res)=>{
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err)
+        })
+        this.handleClose()
     }
 
     handleChange = (e) => {
@@ -78,7 +78,6 @@ const styles = theme => ({
     
     render() {
         const { classes } = this.props
-        
 
         return (
             <div>
@@ -154,9 +153,11 @@ const LogPreview = props => {
 const Logs = props => {
     console.log('logs props : ', props)
     const [selected, setSelected] = useState({});
+    // const [projId, setProjId] = useState({})
     const handleSelect = (e, log) => {
         e.preventDefault()
         setSelected(log)
+        // setProjId(props.match.params.id)
     }
 
     const { id } = props.match.params
@@ -166,7 +167,7 @@ const Logs = props => {
     }, [props.listLogs])
 
 
-    console.log('project ID for logs: ', props )
+    console.log('project ID for logs: ', props.match.params.id )
 
     return (
         <div id='log'>
