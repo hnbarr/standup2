@@ -153,11 +153,9 @@ const LogPreview = props => {
 const Logs = props => {
     console.log('logs props : ', props)
     const [selected, setSelected] = useState({});
-    // const [projId, setProjId] = useState({})
     const handleSelect = (e, log) => {
         e.preventDefault()
         setSelected(log)
-        // setProjId(props.match.params.id)
     }
 
     const { id } = props.match.params
@@ -167,7 +165,7 @@ const Logs = props => {
     }, [props.listLogs])
 
 
-    console.log('project ID for logs: ', props.match.params.id )
+    console.log('project ID for logs: ', props.match.params.id, props.logs.projectId )
 
     return (
         <div id='log'>
@@ -183,7 +181,9 @@ const Logs = props => {
                 </form>
                 <div id='logList'>
                     {props.logs.map((l, i)=>{
+                        if(props.match.params.id === l.projectId){
                             return <Log key={i} title={l.title} description={l.description} tag={l.tag} handleSelect={handleSelect}/>
+                        }
                     })}
                 </div>
             </div>
