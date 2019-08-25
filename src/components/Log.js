@@ -164,8 +164,13 @@ const Logs = props => {
         props.listLogs(projectId)
     }, [props.listLogs])
 
-
-    console.log('project ID for logs: ', props.match.params.id, props.logs.projectId )
+    // console.log('project ID for logs: ', props.match.params.id )
+    // const noDups = (arr) => {
+    //     let removedDups = arr.filter((log, i) => {
+    //         console.log(i == arr.indexOf(log))
+    //     });
+    //     return removedDups
+    // }
 
     return (
         <div id='log'>
