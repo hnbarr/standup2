@@ -164,7 +164,6 @@ const Logs = props => {
 
     useEffect(() => {
         console.log('useEffect props: ', props)
-        // window.location.reload()
         // if(!updated.current){
         //     updated.current = true
         // } else {
