@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { stat } from 'fs';
 
 const stats = ( state=[], action ) => {
     switch(action.type){

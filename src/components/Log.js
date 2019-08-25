@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component, useState, useEffect, useRef } from 'react'
 import './styles/log.css'
 // import state from '../redux/state'
 import Nav from './Nav'
@@ -158,19 +158,20 @@ const Logs = props => {
         setSelected(log)
     }
 
+    // let logsState = null
     const { id } = props.match.params
+    // const updated = useRef()
+
     useEffect(() => {
+        console.log('useEffect props: ', props)
+        // window.location.reload()
+        // if(!updated.current){
+        //     updated.current = true
+        // } else {
         const projectId = id
         props.listLogs(projectId)
+        // }
     }, [props.listLogs])
-
-    // console.log('project ID for logs: ', props.match.params.id )
-    // const noDups = (arr) => {
-    //     let removedDups = arr.filter((log, i) => {
-    //         console.log(i == arr.indexOf(log))
-    //     });
-    //     return removedDups
-    // }
 
     return (
         <div id='log'>
@@ -184,7 +185,8 @@ const Logs = props => {
                     <TextField id="searchTag" label="search" placeholder='eg. mongo'/>
                     <Button id='searchBtn' color='primary' type='submit'>go</Button>
                 </form>
-                <div id='logList'>
+                <div id='logList' >
+                {/* ref={(input) => {logsState = input}} */}
                     {props.logs.map((l, i)=>{
                         if(props.match.params.id === l.projectId){
                             return <Log key={i} title={l.title} description={l.description} tag={l.tag} handleSelect={handleSelect}/>
