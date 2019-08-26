@@ -11,7 +11,7 @@ import Nav from './Nav'
 // import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
-
+  
   return(
       <div className='dashboard'>
           <Nav/>
