@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect, useRef } from 'react'
 import './styles/log.css'
 // import state from '../redux/state'
 import Nav from './Nav'
+import state from '../redux/state'
 import { TextField, Button, Modal, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 // import PropTypes from 'prop-types'
@@ -158,6 +159,11 @@ const Logs = props => {
         setSelected(log)
     }
 
+    let filtered = (state.logs).filter((log, index) => {
+        return index == (state.logs).indexOf(log)
+    })
+
+
     // let logsState = null
     const { id } = props.match.params
     // const updated = useRef()
@@ -168,9 +174,9 @@ const Logs = props => {
         //     updated.current = true
         // } else {
         const projectId = id
-        props.listLogs(projectId)
+        props.logs.length === state.logs.length && props.listLogs(projectId)
         // }
-    }, [props.listLogs])
+    }, [props.listLogs]) //this is here to let the program know to only re-run if listLogs change
 
     return (
         <div id='log'>
