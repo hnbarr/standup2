@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect, useRef } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import './styles/log.css'
 // import state from '../redux/state'
 import Nav from './Nav'
@@ -159,9 +159,9 @@ const Logs = props => {
         setSelected(log)
     }
 
-    let filtered = (state.logs).filter((log, index) => {
-        return index == (state.logs).indexOf(log)
-    })
+    // let filtered = (state.logs).filter((log, index) => {
+    //     return index === (state.logs).indexOf(log)
+    // })
 
 
     // let logsState = null
@@ -174,7 +174,8 @@ const Logs = props => {
         //     updated.current = true
         // } else {
         const projectId = id
-        props.logs.length === state.logs.length && props.listLogs(projectId)
+        // props.logs.length === state.logs.length && props.listLogs(projectId) //semi working method?
+        props.listLogs(projectId)
         // }
     }, [props.listLogs]) //this is here to let the program know to only re-run if listLogs change
 

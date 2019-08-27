@@ -104,7 +104,7 @@ const Task = props => {
     
     return (
         <div className='newItem' id='newTask'>
-            <Checkbox color='primary' onClick={(e)=>handleCheck(e)} tag={tag}inputProps={{'aria-label': 'primary checkbox'}}/>
+            <Checkbox id='taskCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag}inputProps={{'aria-label': 'primary checkbox'}}/>
             <p id='taskTitle'>{props.value}</p>
             {/* <div id='taskButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>

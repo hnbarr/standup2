@@ -104,7 +104,7 @@ const Blocker = props => {
 
     return (
         <div className='newItem' id='newBlocker'>
-            <Checkbox color='primary' onClick={(e)=>handleCheck(e)} tag={tag} inputProps={{'aria-label': 'primary checkbox'}}/>
+            <Checkbox id='blockerCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag} inputProps={{'aria-label': 'primary checkbox'}}/>
             <p id='blockerTitle'> {props.value}</p>
             {/* <div id='blockerButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>

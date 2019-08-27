@@ -94,7 +94,7 @@ body {
 }
 
 #newTask, #newBlocker {
-    width: 100%;
+    /* width: 100%; */
     height: 40px;
     margin-top: 5px;
     box-shadow:  0 0 3px rgb(133, 149, 171);
@@ -104,17 +104,18 @@ body {
     align-items: center;
     border-radius: 12px;
     background-color: white;
-    padding: 10px;
+    padding: 5px;
 }
 
 
-#taskButtons, #blockerButtons  {
-    width: 100px;
+/* #taskButtons, #blockerButtons  {
+    width: 50px;
     display: flex;
     justify-content: space-evenly;
-}
+} */
 
 #taskButtons button, #blockerButtons button {
+    /* width: 5%; */
     padding: 8px;
     outline: none;
     border: none;
@@ -122,7 +123,7 @@ body {
 }
 
 #taskTitle, #blockerTitle {
-    width: 90%;
+    width: 100%;
     text-align: left;
 }
 
@@ -251,6 +252,10 @@ body {
 
 @media only screen and (max-width: 900px) {
 
+    #taskTitle, #blockerTitle {
+        width: 80%;
+    }
+
     .toolbar {
         padding: 3px;
     }
@@ -328,7 +333,7 @@ body {
 
   @media only screen and (max-width: 600px) {
     #taskTitle, #blockerTitle {
-        width: 60%;
+        width: 80%;
     }
 
     #newTask, #newProject, #newBlocker, .stat {
@@ -336,11 +341,11 @@ body {
         margin: 0 auto;
     }
     
-    #taskButtons, #blockerButtons  {
-        width: 40%;
+    /* #taskButtons, #blockerButtons  {
+        width: 20%;
         display: flex;
         justify-content: space-evenly;
-    }
+    } */
 
     #statList {
         height: 175px;
