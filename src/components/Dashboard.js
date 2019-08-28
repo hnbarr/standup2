@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import './styles/dash.css'
 import TaskContainer from '../containers/TaskContainer'
 import BlockerContainer from '../containers/BlockerContainer'
@@ -11,7 +11,11 @@ import Nav from './Nav'
 // import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
-  
+  // console.log('dash store: ', store, store.getState())
+  // useEffect(()=> {
+
+  // })
+
   return(
       <div className='dashboard'>
           <Nav/>

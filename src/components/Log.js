@@ -3,6 +3,7 @@ import './styles/log.css'
 // import state from '../redux/state'
 import Nav from './Nav'
 import state from '../redux/state'
+import store from '../redux/store'
 import { TextField, Button, Modal, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 // import PropTypes from 'prop-types'
@@ -159,24 +160,14 @@ const Logs = props => {
         setSelected(log)
     }
 
-    // let filtered = (state.logs).filter((log, index) => {
-    //     return index === (state.logs).indexOf(log)
-    // })
-
-
-    // let logsState = null
     const { id } = props.match.params
-    // const updated = useRef()
+    const projectId = id
+
 
     useEffect(() => {
         console.log('useEffect props: ', props)
-        // if(!updated.current){
-        //     updated.current = true
-        // } else {
-        const projectId = id
-        // props.logs.length === state.logs.length && props.listLogs(projectId) //semi working method?
-        props.listLogs(projectId)
-        // }
+        console.log('useEffect logs store :', store)
+        props.logs.length === props.logs.length && props.listLogs(projectId) //semi working method?
     }, [props.listLogs]) //this is here to let the program know to only re-run if listLogs change
 
     return (
