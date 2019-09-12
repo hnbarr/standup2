@@ -1,7 +1,8 @@
 const express = require('express')
+const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
 const app = express()
-const router = require('./routes/TasksRoutes')
+// const router = require('./routes/TasksRoutes')
 const bodyParser = require('body-parser')
 const path = require('path')
 const port = process.env.PORT || 5000;
@@ -25,12 +26,30 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb+srv://admin:admin@cluster0-kohaq.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
 app.use(bodyParser.json())
 
+
+app.post('/api/login', (req, res) => {
+    const user = {
+        id: 1,
+        email: 'hnbarr94@gmail.com'
+    }
+    jwt.sign({user}, 'titan', (err, token)=> {
+        res.json({
+            token
+        })
+    })
+})
+
 app.listen(port, (err)=>{
     if(err) console.log(err)
     else console.log(`working on port ${port}`)
 })
 
-app.use(router)
+const verifyToken = (req, res, next) => {
+    const bearerHeader = req.headers['authorization']
+
+}
+
+// app.use(router, verifyToken)
 app.use(taskRoutes)
 app.use(projectRoutes)
 app.use(logRoutes)

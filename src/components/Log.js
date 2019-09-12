@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react'
 import './styles/log.css'
 // import state from '../redux/state'
 import Nav from './Nav'
-import state from '../redux/state'
+// import state from '../redux/state'
 import store from '../redux/store'
 import { TextField, Button, Modal, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
@@ -167,7 +167,7 @@ const Logs = props => {
     useEffect(() => {
         console.log('useEffect props: ', props)
         console.log('useEffect logs store :', store)
-        props.logs.length === props.logs.length && props.listLogs(projectId) //semi working method?
+        props.listLogs(projectId) //semi working method?
     }, [props.listLogs]) //this is here to let the program know to only re-run if listLogs change
 
     return (
