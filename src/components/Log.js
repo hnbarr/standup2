@@ -67,7 +67,7 @@ const styles = theme => ({
         fetch(`/api/projects/${this.props.match.params.id}/logs`, options).then((res)=>{
             return res.json()
         }).then((res)=>{
-            this.props.createLog({title, tag, description, projectId})
+            this.props.listLogs(this.projecttId)
             console.log(res)
         }).catch((err)=>{
             console.log(err)
