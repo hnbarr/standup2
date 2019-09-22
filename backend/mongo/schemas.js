@@ -16,12 +16,14 @@ const Logs = new Schema ({
 
 const Tasks = new Schema ({
     task: String,
-    date: Date
+    date: Date,
+    checked: Boolean
 })
 
 const Blockers = new Schema ({
     blocker: String,
-    date: Date
+    date: Date,
+    checked: Boolean
 })
 
 const Stats = new Schema ({

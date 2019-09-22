@@ -34,7 +34,8 @@ class TaskModal extends Component {
     state = {
         open: false,
         task: '',
-        checked: [] //for task progress in stats
+        checked: false
+        // checked: [] //for task progress in stats
     }
 
     toggleOpen = () => this.setState({ open: !this.state.open })
@@ -48,11 +49,12 @@ class TaskModal extends Component {
         // this.props.createTask(this.state.task)
         const task = this.state.task
         const date = new Date()
+        const checked = this.state.checked
 
             let options = {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({ task, date })
+                body: JSON.stringify({ task, date, checked })
             }
             fetch("/api/tasks", options).then((res)=>{
                 return res.json()
@@ -89,6 +91,7 @@ class TaskModal extends Component {
 
 const Task = props => {
     const tag = props.tag
+    console.log('task checked props: ', props)
     const handleCheck = (e) => {
         // console.log(e.target.value)
         e.preventDefault()
