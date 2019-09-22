@@ -34,7 +34,6 @@ class TaskModal extends Component {
     state = {
         open: false,
         task: '',
-        checked: false
         // checked: [] //for task progress in stats
     }
 
@@ -49,12 +48,11 @@ class TaskModal extends Component {
         // this.props.createTask(this.state.task)
         const task = this.state.task
         const date = new Date()
-        const checked = this.state.checked
 
             let options = {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({ task, date, checked })
+                body: JSON.stringify({ task, date })
             }
             fetch("/api/tasks", options).then((res)=>{
                 return res.json()
@@ -91,9 +89,8 @@ class TaskModal extends Component {
 
 const Task = props => {
     const tag = props.tag
-    console.log('task checked props: ', props)
+    // console.log('task checked props: ', props)
     const handleCheck = (e) => {
-        // console.log(e.target.value)
         e.preventDefault()
         props.deleteTask(tag)
         setTimeout(() => {
@@ -107,7 +104,7 @@ const Task = props => {
     
     return (
         <div className='newItem' id='newTask'>
-            <Checkbox id='taskCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag}inputProps={{'aria-label': 'primary checkbox'}}/>
+            <Button id='taskCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag}><i className="fas fa-times"></i></Button>
             <p id='taskTitle'>{props.value}</p>
             {/* <div id='taskButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>
