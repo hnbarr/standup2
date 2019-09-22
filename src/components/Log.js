@@ -31,8 +31,7 @@ const styles = theme => ({
 
   class LogModal extends Component {
     state = {
-        open: false,
-        logs: [],
+        open: false, 
         title: '',
         tag: '',
         description: ''
@@ -49,27 +48,33 @@ const styles = theme => ({
             open: !this.state.open,
             title: '',
             tag: '',
-            description: ''
+            description: '',
+            projectId: this.props.match.params.id
         })
+        // console.log('logs: ', this.props.logs)
+        this.props.listLogs(this.state.projectId)
     };
 
     handleSubmit = () => { 
-        const { title, tag, description} = this.state
-        // this.props.createLog({title, tag, description})
-        // this.handleClose()
+        // console.log('this submit in logs: ', this)
+        const { title, tag, description, projectId} = this.state
+        this.props.createLog({title, tag, description, projectId})
         let options = {
             method: "POST",
             headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({ title, tag, description})
+            body: JSON.stringify({ title, tag, description, projectId})
         }
-        fetch("/api/projects/:id/logs", options).then((res)=>{
+        fetch(`/api/projects/${this.props.match.params.id}/logs`, options).then((res)=>{
             return res.json()
         }).then((res)=>{
+            this.props.createLog({title, tag, description, projectId})
             console.log(res)
         }).catch((err)=>{
             console.log(err)
         })
         this.handleClose()
+        // console.log('logs: ', this.props.logs)
+   
     }
 
     handleChange = (e) => {

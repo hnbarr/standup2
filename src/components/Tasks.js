@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
-import { Typography, Checkbox, TextField, Button, Modal } from '@material-ui/core'
+import { Typography, TextField, Button, Modal } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 import './styles/sections.css'
 
@@ -90,7 +90,7 @@ class TaskModal extends Component {
 const Task = props => {
     const tag = props.tag
     // console.log('task checked props: ', props)
-    const handleCheck = (e) => {
+    const handleDelete = (e) => {
         e.preventDefault()
         props.deleteTask(tag)
         setTimeout(() => {
@@ -104,7 +104,7 @@ const Task = props => {
     
     return (
         <div className='newItem' id='newTask'>
-            <Button id='taskCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag}><i className="fas fa-times"></i></Button>
+            <Button id='taskCheckbox' color='primary' onClick={(e)=>handleDelete(e)} tag={tag}><i className="fas fa-times"></i></Button>
             <p id='taskTitle'>{props.value}</p>
             {/* <div id='taskButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>

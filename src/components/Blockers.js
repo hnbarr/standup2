@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Typography, Checkbox, TextField, Button, Modal } from '@material-ui/core'
+import { Typography, TextField, Button, Modal } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
 import './styles/sections.css'
 // import PropTypes from 'prop-types'
@@ -29,7 +29,7 @@ class BlockerModal extends Component {
     state = {
         open: false,
         blocker: '',
-        checked: [] //for blockers defeated in stats
+        // checked: [] //for blockers defeated in stats
     }
     toggleOpen = () => this.setState({ open: !this.state.open })
 
@@ -94,7 +94,7 @@ const Blocker = props => {
     //     console.log(e.target, 'editing')
     // }
 
-    const handleCheck = (e) => {
+    const handleDelete = (e) => {
         e.preventDefault()
         props.deleteBlocker(tag)
         setTimeout(() => {
@@ -104,7 +104,7 @@ const Blocker = props => {
 
     return (
         <div className='newItem' id='newBlocker'>
-            <Button id='blockerCheckbox' color='primary' onClick={(e)=>handleCheck(e)} tag={tag}><i className="fas fa-times"></i></Button>
+            <Button id='blockerCheckbox' color='primary' onClick={(e)=>handleDelete(e)} tag={tag}><i className="fas fa-times"></i></Button>
             <p id='blockerTitle'> {props.value}</p>
             {/* <div id='blockerButtons'>
                 <button onClick={handleEdit} className='edit'><i className="fas fa-pencil-alt fa-2x"></i></button>
