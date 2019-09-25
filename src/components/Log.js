@@ -52,7 +52,7 @@ const styles = theme => ({
             projectId: this.props.match.params.id
         })
         // console.log('logs: ', this.props.logs)
-        this.props.listLogs(this.state.projectId)
+        
     };
 
     handleSubmit = () => { 
@@ -68,12 +68,14 @@ const styles = theme => ({
             return res.json()
         }).then((res)=>{
             this.props.listLogs(this.projecttId)
+            // not working here. component is not refreshing after add new log
             console.log(res)
         }).catch((err)=>{
             console.log(err)
         })
         this.handleClose()
         // console.log('logs: ', this.props.logs)
+        this.props.listLogs(this.state.projectId)
    
     }
 
