@@ -52,6 +52,7 @@ const styles = theme => ({
             projectId: this.props.match.params.id
         })
         // console.log('logs: ', this.props.logs)
+        this.props.listLogs(this.state.projectId)
         
     };
 
@@ -75,8 +76,6 @@ const styles = theme => ({
         })
         this.handleClose()
         // console.log('logs: ', this.props.logs)
-        this.props.listLogs(this.state.projectId)
-   
     }
 
     handleChange = (e) => {
