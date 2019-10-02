@@ -41,6 +41,12 @@ body {
         "btn"
 }
 
+#taskCheckbox:hover, #blockerCheckbox:hover {
+    background-color: transparent !important;
+    /* color: rgb(130, 180, 249); */
+    color: rgb(181, 111, 129);
+}
+
 #statList {
     display: block;
     margin-top: 3px;
