@@ -165,8 +165,9 @@ const Projects = (props) => {
                 <ProjectModal {...props}/>
             </div>
             <form id='search'>
-                <TextField id="searchBar" color='primary' label="search" placeholder='eg. crud'/>
-                <Button id='searchBtn' color='primary' type='submit' variant='outlined' >go</Button>
+                {/* <TextField id="searchBar" color='primary' label="search" placeholder='eg. crud'/> */}
+                {/* <Button id='searchBtn' color='primary' type='submit' variant='outlined' >go</Button> */}
+                {/* <Button id='submitted' color='primary' variant='outlined' >submitted</Button> */}
             </form>
             <div id='projectList'>
                 {props.projects.map((p)=>{
