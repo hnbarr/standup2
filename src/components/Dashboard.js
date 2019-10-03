@@ -5,16 +5,17 @@ import BlockerContainer from '../containers/BlockerContainer'
 import Stats from './Stats'
 import ProjectContainer from '../containers/ProjectContainer'
 import Nav from './Nav'
-// import store from '../redux/store'
+import store from '../redux/store'
 // import state from '../redux/state'
 
 // import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
   // console.log('dash store: ', store, store.getState())
-  // useEffect(()=> {
 
-  // })
+  useEffect(()=> {
+    console.log('useEffect in dash store: ', store.getState())
+  })
 
   return(
       <div className='dashboard'>
